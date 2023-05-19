@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
-  "version": "0.1",
+  "version": "0.2",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
-  "options_page": "options.html",
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+
   "action": {
     "default_icon": "icon128.png"
   },

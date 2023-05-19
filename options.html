@@ -9,7 +9,7 @@
       --colorBase: #032a48;
     }
     body {
-      padding: 20px;
+      padding: 0px 15px 10px 15px;
       color: var(--colorBase);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
@@ -23,31 +23,29 @@
       opacity: 0.7;
     }
     hr {
-      margin: 30px 0;
+      margin: 15px 0;
       border: none;
-      border-top: 1px solid var(--colorBase);
-    }
-    .header {
-      display: flex;
-      margin-bottom: 20px;
-    }
-    .header img {
-      width: 48px;
-      height: 48px;
-      margin-right: 10px;
-      border-radius: 5px;
+      border-top: 1px solid #999;
     }
     .mono, input, select {
       font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    }
+    .intro {
+      
     }
     input, select {
       padding: 10px;
       border-radius: 5px;
       border: 2px solid var(--colorBase);
       margin-top: 5px;
-      margin-bottom: 15px;
-      width: 380px; 
+      margin-bottom: 5px;
+      width: 400px; 
+      min-width: 400px;
       max-width: 100%;
+      -ms-box-sizing:content-box;
+      -moz-box-sizing:content-box;
+      -webkit-box-sizing:content-box; 
+      box-sizing:content-box;
       color: var(--colorBase);
     }
     button {
@@ -69,22 +67,34 @@
       transition: 0.2s all;
       cursor: pointer;
     }
+    .success-wrap {
+      display: flex;
+      align-items: center;
+      padding-bottom: 5px;
+      padding-top: 15px;
+    }
+    .success-wrap div {
+      height: 100%;
+    }
     #success {
-      margin-top: 20px;
-      color: #4BB543;
+      margin-left: 40px;
       display: none;
+      color: #4BB543;
+    }
+    .footer {
+      font-size: 11px;
+    }
+    .hint {
+      color: #999;
+      font-style: italic;
+      padding-left: 10px;
     }
   </style>
 </head>
 <body>
   <div id="deepl-page-wrap">
-    
-    <div class="header">
-      <img src="icon48.png">
-      <h1>__MSG_optionsTitle__</h1>
-    </div>
-    <p>__MSG_optionsDescription__ <a href="https://www.deepl.com/pro-api" target="_blank">https://www.deepl.com/pro-api</a></p>
-    <br>
+
+    <p class="intro">__MSG_optionsDescription__ <a href="https://www.deepl.com/pro-api" target="_blank">https://www.deepl.com/pro-api</a></p>
     
     <label for="deepl-api-key">Enter your DeepL API-Key:</label>
     <br>
@@ -163,19 +173,21 @@
       <option value="UK">Ukrainian</option>
       <option value="ZH">Chinese</option>
     </select>
-    <br>
-    <em><strong>Hint:</strong> Select one or more with STRG or CMD key</em>
-    <br>
-    <br><br><br>
-    <button id="save-button">Update</button>
+    <div class="hint"><strong>Hint:</strong> Select one or more with STRG or CMD key</div>
+
     
-    <div id="success">
-      ✅ Settings saved successful
+    <div class="success-wrap">
+      <div>
+        <button id="save-button">Update</button>
+      </div>
+      <div id="success">
+        ✅ Settings saved successful
+      </div>
     </div>
     
     <hr>
     
-    <span class="mono">Build with ❤️ by <a href="https://www.buerobattenberg.de/" target="_blank">BÜRO BATTENBERG</a></span>
+    <div class="mono footer">Build with ❤️ by <a href="https://www.buerobattenberg.de/" target="_blank">BÜRO BATTENBERG</a></div>
     
   </div>
 

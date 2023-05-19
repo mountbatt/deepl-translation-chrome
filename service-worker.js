@@ -53,6 +53,13 @@ function createContextMenu() {
 // Initialer Aufruf zum Erstellen des Kontextmenüs
 createContextMenu();
 
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  if (message.action === 'reloadContextMenu') {
+    // Funktion zum Erstellen des Kontextmenüs aufrufen
+    createContextMenu();
+  }
+});
+
 
 async function getDeepLApiKey() {
   return new Promise((resolve) => {

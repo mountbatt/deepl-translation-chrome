@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("Die apiTargetLang wurde gespeichert.");
     });
     
+    // Nachricht an den Service-Worker senden, um das Kontextmenü neu zu laden
+    chrome.runtime.sendMessage({ action: 'reloadContextMenu' });
+    
     var successElement = document.getElementById("success");
     successElement.style.display = "block";
     

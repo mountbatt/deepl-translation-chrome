@@ -23,6 +23,15 @@ function swapInput(translation) {
       var range = window.getSelection().getRangeAt(0);
       range.deleteContents();
       range.insertNode(document.createTextNode(newText));
+    } else {
+      // Find all elements containing text
+      var textElements = document.querySelectorAll('p, span, h1, h2, h3, h4, h5, li, i, figcaption'); // Beispiel: div- und p-Tags
+    
+      textElements.forEach(function(element) {
+        if (element.innerText.includes(selectedText)) {
+          element.innerText = element.innerText.replace(selectedText, newText);
+        }
+      });
     }
   }
 }
