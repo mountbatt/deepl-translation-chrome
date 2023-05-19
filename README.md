@@ -7,7 +7,7 @@
  
  DeepL even keeps HTML code etc. when translating. 
 
-# Installation
+## Installation
 
 To install this extension in Chrome, you need to download the files and save them in a folder of your choice and unzip the ZIP. 
 
@@ -15,7 +15,7 @@ Go to the chrome://extensions/ page and click the "Load unpacked extension" butt
 
 Then go to "Details" and under "Options" enter your API key and your languages.
 
-# Screenshots
+## Screenshots
 
 ![Bildschirmfoto 2023-05-19 um 23 20 13](https://github.com/mountbatt/deepl-translation-chrome/assets/2411246/72d4ab0a-4fcd-4857-869f-e159b37ea931)
  
