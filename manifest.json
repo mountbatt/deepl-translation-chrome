@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "version": "0.1",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "options_page": "options.html",
+  "action": {
+    "default_icon": "icon128.png"
+  },
+  "permissions": ["activeTab", "contextMenus", "storage"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}

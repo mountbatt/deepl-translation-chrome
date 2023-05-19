@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeepL Translation Settings</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --colorBase: #032a48;
+    }
+    body {
+      padding: 20px;
+      color: var(--colorBase);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    h1 {
+      font-weight: 500;
+    }
+    a {
+      color: inherit;
+    }
+    a:hover {
+      opacity: 0.7;
+    }
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 1px solid var(--colorBase);
+    }
+    .header {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .header img {
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+    .mono, input, select {
+      font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    }
+    input, select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid var(--colorBase);
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 380px; 
+      max-width: 100%;
+      color: var(--colorBase);
+    }
+    button {
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--colorBase);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 16px;
+      transition: 0.2s all;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    button:hover {
+      background: #4BB543;
+      transform: translateY(3px);
+      transition: 0.2s all;
+      cursor: pointer;
+    }
+    #success {
+      margin-top: 20px;
+      color: #4BB543;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="deepl-page-wrap">
+    
+    <div class="header">
+      <img src="icon48.png">
+      <h1>__MSG_optionsTitle__</h1>
+    </div>
+    <p>__MSG_optionsDescription__ <a href="https://www.deepl.com/pro-api" target="_blank">https://www.deepl.com/pro-api</a></p>
+    <br>
+    
+    <label for="deepl-api-key">Enter your DeepL API-Key:</label>
+    <br>
+    <input type="text" id="deepl-api-key" placeholder="e.g: 61ac12f7-7015-95ca-c78d-dcf65d0c756a:fx">
+    <br><br>
+    <label for="deepl-api-url">Choose the appropriate DeepL API URL:</label><br>
+    <select id="deepl-api-url">
+      <option>Please choose ...</option>
+      <option value="https://api-free.deepl.com/v2/translate">(Free) https://api-free.deepl.com/v2/translate</option>
+      <option value="https://api.deepl.com/v2/translate">(Pro) https://api.deepl.com/v2/translate</option>
+    </select>
+    <br><br>
+    <label for="deepl-api-sourcelang">Choose your default language or use the auto-detect feature:</label><br> 
+    <select id="deepl-api-sourcelang">
+      <option value="auto">Use DeepL auto-detection</option>
+      <option value="BG">Bulgarian</option>
+      <option value="CS">Czech</option>
+      <option value="DA">Danish</option>
+      <option value="DE">German</option>
+      <option value="EL">Greek</option>
+      <option value="EN">English</option>
+      <option value="ES">Spanish</option>
+      <option value="ET">Estonian</option>
+      <option value="FI">Finnish</option>
+      <option value="FR">French</option>
+      <option value="HU">Hungarian</option>
+      <option value="ID">Indonesian</option>
+      <option value="IT">Italian</option>
+      <option value="JA">Japanese</option>
+      <option value="KO">Korean</option>
+      <option value="LT">Lithuanian</option>
+      <option value="LV">Latvian</option>
+      <option value="NB">Norwegian</option>
+      <option value="NL">Dutch</option>
+      <option value="PL">Polish</option>
+      <option value="PT">Portuguese</option>
+      <option value="RO">Romanian</option>
+      <option value="RU">Russian</option>
+      <option value="SK">Slovak</option>
+      <option value="SL">Slovenian</option>
+      <option value="SV">Swedish</option>
+      <option value="TR">Turkish</option>
+      <option value="UK">Ukrainian</option>
+      <option value="ZH">Chinese</option>
+    </select>
+    <br><br>
+    <label for="deepl-api-targetlang">Choose target languages into which you want to translate your text:</label><br> 
+    <select id="deepl-api-targetlang" multiple>
+      <option value="BG">Bulgarian</option>
+      <option value="CS">Czech</option>
+      <option value="DA">Danish</option>
+      <option value="DE">German</option>
+      <option value="EL">Greek</option>
+      <option value="EN">English</option>
+      <option value="ES">Spanish</option>
+      <option value="ET">Estonian</option>
+      <option value="FI">Finnish</option>
+      <option value="FR">French</option>
+      <option value="HU">Hungarian</option>
+      <option value="ID">Indonesian</option>
+      <option value="IT">Italian</option>
+      <option value="JA">Japanese</option>
+      <option value="KO">Korean</option>
+      <option value="LT">Lithuanian</option>
+      <option value="LV">Latvian</option>
+      <option value="NB">Norwegian</option>
+      <option value="NL">Dutch</option>
+      <option value="PL">Polish</option>
+      <option value="PT">Portuguese</option>
+      <option value="RO">Romanian</option>
+      <option value="RU">Russian</option>
+      <option value="SK">Slovak</option>
+      <option value="SL">Slovenian</option>
+      <option value="SV">Swedish</option>
+      <option value="TR">Turkish</option>
+      <option value="UK">Ukrainian</option>
+      <option value="ZH">Chinese</option>
+    </select>
+    <br>
+    <em><strong>Hint:</strong> Select one or more with STRG or CMD key</em>
+    <br>
+    <br><br><br>
+    <button id="save-button">Update</button>
+    
+    <div id="success">
+      ✅ Settings saved successful
+    </div>
+    
+    <hr>
+    
+    <span class="mono">Build with ❤️ by <a href="https://www.buerobattenberg.de/" target="_blank">BÜRO BATTENBERG</a></span>
+    
+  </div>
+
+  <script src="options.js"></script>
+  <script src="i18n.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "extName": {
+      "message": "DeepL Übersetzung"
+  },
+  "extDescription": {
+      "message": "Übersetze textarea oder input Felder. Verwende die Einstellungen der Erweiterung, um deinen DeepL Free oder Pro API-Key einzugeben."
+  },
+  "optionsTitle": {
+    "message": "DeepL Übersetzung Einstellungen"
+  },
+  "optionsDescription": {
+    "message": "Hol Dir hier den DeepL Free API-Key:"
+  }
+}
