@@ -6,6 +6,10 @@
  After a refresh of the extension you can use the translation tools for your text selection by right clicking in Chrome.
  
  DeepL even keeps HTML code etc. when translating. 
+ 
+## Requirements
+- Chrome Browser
+- DeepL Free (or Pro) API-Key https://www.deepl.com/pro-api
 
 ## Installation
 
