@@ -19,6 +19,8 @@ Go to the chrome://extensions/ page and click the "Load unpacked extension" butt
 
 Then go to "Details" and under "Options" enter your API key and your languages.
 
+If it shows you "failed to fetch", please set the Extension Permission in Chrome to "All Websites" to allow it to run on every site.
+
 ## Screenshots
 
 ![Bildschirmfoto 2023-05-19 um 23 20 13](https://github.com/mountbatt/deepl-translation-chrome/assets/2411246/72d4ab0a-4fcd-4857-869f-e159b37ea931)
