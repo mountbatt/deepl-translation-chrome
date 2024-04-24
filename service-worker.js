@@ -109,7 +109,7 @@ async function callDeepL(text, source_lang, target_lang) {
     source_lang +
     "&target_lang=" +
     target_lang + 
-    "&preserve_formatting=1&split_sentences=1";
+    "&preserve_formatting=1&tag_handling=html&split_sentences=1";
 
   const options = {
     method: "post",
