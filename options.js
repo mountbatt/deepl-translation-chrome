@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var apiURLSelect = document.getElementById("deepl-api-url");
   var apiSourceLangSelect = document.getElementById("deepl-api-sourcelang");
   var apiTargetLangSelect = document.getElementById("deepl-api-targetlang");
+  var apiFormalitySelect = document.getElementById("deepl_api_formality");
   var saveButton = document.getElementById("save-button");
 
   saveButton.addEventListener("click", function() {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var apiURL = apiURLSelect.value;
     var apiSourceLang = apiSourceLangSelect.value;
     var apiTargetLang = Array.from(apiTargetLangSelect.selectedOptions).map(option => option.value);
+    var apiFormality = apiFormalitySelect.value;
 
     chrome.storage.sync.set({ "deepl_api_key": apiKey }, function() {
       console.log("Der API-Key wurde gespeichert.");
@@ -31,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     chrome.storage.sync.set({ "deepl_api_targetlang": apiTargetLang }, function() {
       console.log("Die apiTargetLang wurde gespeichert.");
+    });
+    chrome.storage.sync.set({ "deepl_api_formality": apiFormality }, function() {
+      console.log("Die apiFormality wurde gespeichert.");
     });
 
     // Nachricht an den Service-Worker senden, um das Kontextmenü neu zu laden
@@ -77,6 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
           option.selected = true;
         }
       }
+    }
+  });
+  chrome.storage.sync.get("deepl_api_formality", function(result) {
+    if (result.deepl_api_formality) {
+      apiFormalitySelect.value = result.deepl_api_formality;
     }
   });
 

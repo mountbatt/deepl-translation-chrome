@@ -33,4 +33,6 @@ If it shows you "failed to fetch", please set the Extension Permission in Chrome
 
 ## Changelog
 
+0.4: en-GB and en-US added, Formality added
+
 0.3: New tag handling option. Now you can enable "html" or "xml" to preserve these tags in your translations 

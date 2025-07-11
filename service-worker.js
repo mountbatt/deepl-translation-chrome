@@ -4,7 +4,8 @@
     DA: "Danish",
     DE: "German",
     EL: "Greek",
-    EN: "English",
+    "EN-GB": "English (GB)",
+    "EN-US": "English (US)",
     ES: "Spanish",
     ET: "Estonian",
     FI: "Finnish",
@@ -93,8 +94,16 @@
     });
   }
 
+  async function getDetDeepLApiFormality() {
+    return new Promise((resolve) => {
+      chrome.storage.sync.get("deepl_api_formality", function(result) {
+        resolve(result.deepl_api_formality || "default");
+      });
+    });
+  }
+
   // Call DeepL API
-  async function callDeepL(text, source_lang, target_lang, taghandling) {
+  async function callDeepL(text, source_lang, target_lang, taghandling, formality) {
 
     const API_KEY = await getDeepLApiKey();
     const API_URL = await getDeepLApiUrl();
@@ -119,6 +128,7 @@
       target_lang +
       "&tag_handling=" +
       taghandling +
+      "&formality=" + formality +
       "&preserve_formatting=1&split_sentences=1";
 
     const options = {
@@ -147,10 +157,11 @@
 
     // default: 
     let from = "DE";
-    let to = "EN";
+    let to = "EN-GB";
 
     var taghandling = await getDeepLApiTaghandling();
     var sourceLang = await getDeepLApiSourceLang();
+    var formality = await getDetDeepLApiFormality();
     if (sourceLang) {
       from = sourceLang;
     }
@@ -163,6 +174,6 @@
       to = languageCode;
     }
 
-    const translation = await callDeepL(info.selectionText, from, to, taghandling);
+    const translation = await callDeepL(info.selectionText, from, to, taghandling, formality);
     chrome.tabs.sendMessage(tabs.id, translation);
   });
