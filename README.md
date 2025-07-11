@@ -19,6 +19,9 @@ Go to the chrome://extensions/ page and click the "Load unpacked extension" butt
 
 Then go to "Details" and under "Options" enter your API key and your languages.
 
+## Update
+Download the latest release and put the whole files from the .zip into the same directory. Go to the chrome-extension and hit "Update" on top of the extension window. It should show the latest release version number.
+
 ## Troubleshooting
 
 If it shows you "failed to fetch", please set the Extension Permission in Chrome to "All Websites" to allow it to run on every site.
